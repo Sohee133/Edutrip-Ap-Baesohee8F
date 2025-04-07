@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bar Navigasi</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: rgb(245, 239, 234);
+      overflow-x: hidden;
+    }
+
+    header {
+      background-color: rgb(226, 203, 190);
+      padding: 15px 0;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    header a {
+      color: rgb(141, 121, 114);
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    header a:hover {
+      color: rgb(177, 145, 132);
+    }
+
+    h1 {
+      text-align: center;
+      margin: 40px 0 20px;
+      font-size: 36px;
+      color: rgb(157, 129, 119);
+      position: relative;
+      animation: popIn 1s ease-out;
+    }
+
+    h1::after {
+      content: "✨ Temukan Perbedaan yang Menakjubkan! ✨";
+      display: block;
+      font-size: 16px;
+      color: #a87b6c;
+      margin-top: 10px;
+      font-style: italic;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    .content-box {
+      background-color: #fff;
+      max-width: 800px;
+      margin: 0 auto 30px;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      line-height: 1.8;
+      color: #333;
+    }
+
+    .note-box {
+      background-color: #fffbe0;
+      border-left: 6px solid #ffcc80;
+      padding: 15px 20px;
+      margin: 20px auto;
+      max-width: 600px;
+      font-style: italic;
+      color: #7a5b38;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .chart-container {
+      max-width: 400px;
+      margin: 30px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-style: italic;
+      color: rgb(141, 121, 114);
+      margin-bottom: 40px;
+    }
+
+    .click-sign {
+      text-align: center;
+      font-size: 16px;
+      color: rgb(120, 100, 90);
+      margin-top: -10px;
+      margin-bottom: 15px;
+      animation: pulse 2s infinite;
+    }
+
+    .tooltip-info {
+      text-align: center;
+      font-size: 15px;
+      margin-top: 10px;
+      color: rgb(80, 60, 50);
+      min-height: 40px;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .floating-emoji {
+      position: fixed;
+      bottom: 20px;
+      font-size: 24px;
+      animation: floatUp 3s ease forwards;
+      pointer-events: none;
+    }
+
+    @keyframes floatUp {
+      0% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-200px) scale(1.5);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html">Home</a>
+    <a href="agama.html">Agama</a>
+    <a href="bahasaindoneisa.html">Bahasa Indonesia</a>
+    <a href="bahasainggris.html">Bahasa Inggris</a>
+    <a href="ips.html">IPS</a>
+    <a href="mandarin.html">Mandarin</a>
+    <a href="ppkn.html">PPKN</a>
+  </header>
+
+  <h1>Ini adalah halaman Agama 🌸</h1>
+
+  <div class="content-box">
+    <p>
+      Sebelum aku pergi ke Taiwan, aku cuma tahu sedikit tentang negara itu. Aku pikir Taiwan adalah negara yang orang-orangnya kebanyakan beragama Buddha. Itu sangat berbeda dengan Indonesia, tempat aku tinggal, karena di Indonesia kebanyakan orang beragama Islam. Jadi, aku kira di Taiwan semua orang pasti beragama Buddha dan mereka rajin pergi ke kuil.
+    </p>
+    <p>
+      Tapi ternyata, waktu aku berkunjung ke Fu Jen Sacred Heart Senior High School, aku sangat terkejut! Saat kami ngobrol dengan masyarakat di sana, banyak dari mereka bilang kalau mereka tidak punya agama. Mereka bilang mereka adalah ateis, artinya mereka tidak percaya pada Tuhan atau tidak mengikuti agama tertentu. 🌍😲
+    </p>
+    <p>
+      Dari situ, aku belajar bahwa setiap negara punya perbedaan, termasuk soal agama. Di Indonesia, agama sangat penting dan banyak orang menjalankan ibadah setiap hari. Tapi di Taiwan, walaupun banyak juga yang beragama Buddha atau Kristen, ternyata ada juga banyak orang yang tidak mengikuti agama apa pun. Aku jadi sadar bahwa meskipun berbeda, kita tetap bisa saling menghormati. 🤝💖
+    </p>
+    <p>
+      Edutrip ini bikin aku lebih terbuka dan mengerti bahwa dunia itu luas dan penuh perbedaan. Aku jadi lebih menghargai kepercayaan orang lain dan belajar untuk tidak langsung menilai hanya dari apa yang aku pikir sebelumnya. Ini adalah pelajaran penting yang aku dapatkan dari Taiwan ✈️✨
+    </p>
+  </div>
+
+  <div class="note-box">
+    ✏️ Catatan pribadi: "Dunia ini seperti pelangi—penuh warna dan perbedaan, tapi tetap indah saat kita melihatnya bersama."
+  </div>
+
+  <div class="click-sign">Klik salah satu bagian grafik di bawah ini ya! 👇</div>
+
+  <div class="chart-container" id="chartContainer">
+    <canvas id="religionChart"></canvas>
+    <div class="tooltip-info" id="tooltipInfo"></div>
+  </div>
+
+  <div class="footer-note">
+    Belajar memahami perbedaan itu indah 💖
+  </div>
+
+  <script>
+    const ctx = document.getElementById('religionChart').getContext('2d');
+    const chartContainer = document.getElementById('chartContainer');
+    const tooltipInfo = document.getElementById('tooltipInfo');
+
+    function createFloatingEmoji() {
+      const emojiList = ['🌟', '🌸', '🎈', '✨', '💫'];
+      const emoji = document.createElement('div');
+      emoji.className = 'floating-emoji';
+      emoji.textContent = emojiList[Math.floor(Math.random() * emojiList.length)];
+      emoji.style.left = Math.random() * 90 + '%';
+      emoji.style.color = 'rgba(0, 0, 0, 0.4)';
+      document.body.appendChild(emoji);
+
+      setTimeout(() => emoji.remove(), 3000);
+    }
+
+    const religionChart = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Ateis', 'Buddha', 'Kristen', 'Lainnya'],
+        datasets: [{
+          data: [40, 25, 20, 15],
+          backgroundColor: [
+            'rgb(226, 183, 174)',
+            'rgb(194, 216, 182)',
+            'rgb(184, 199, 222)',
+            'rgb(240, 219, 165)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        plugins: {
+          legend: { position: 'bottom' },
+          tooltip: { enabled: false }
+        },
+        onClick: (e, elements) => {
+          if (elements.length > 0) {
+            const index = elements[0].index;
+            const label = religionChart.data.labels[index];
+            const value = religionChart.data.datasets[0].data[index];
+
+            let explanation = '';
+            switch(label) {
+              case 'Ateis': explanation = '40% masyarakat tidak memiliki agama atau kepercayaan (ateis).'; break;
+              case 'Buddha': explanation = '25% memeluk agama Buddha, salah satu yang utama di Taiwan.'; break;
+              case 'Kristen': explanation = '20% adalah pemeluk agama Kristen, Katolik dan Protestan.'; break;
+              case 'Lainnya': explanation = '15% lainnya menganut agama atau kepercayaan lainnya.'; break;
+            }
+
+            tooltipInfo.innerText = explanation;
+            chartContainer.style.transform = 'scale(1.06)';
+            chartContainer.style.boxShadow = '0 0 25px rgba(255, 170, 120, 0.6)';
+
+            for (let i = 0; i < 5; i++) {
+              createFloatingEmoji();
+            }
+
+            setTimeout(() => {
+              chartContainer.style.transform = 'scale(1)';
+              chartContainer.style.boxShadow = '0 3px 10px rgba(0, 0, 0, 0.1)';
+            }, 2000);
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

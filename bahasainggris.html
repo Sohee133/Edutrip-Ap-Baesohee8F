@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shifen Old Street - Edutrip</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff6f0;
+    }
+
+    header {
+      background-color: #ffc8a2;
+      padding: 15px 0;
+      text-align: center;
+    }
+
+    header a {
+      color: #7f3f28;
+      text-decoration: none;
+      margin: 0 12px;
+      font-size: 18px;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    header a:hover {
+      color: #5c2a1d;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 36px;
+      color: #d17948;
+      margin-top: 30px;
+    }
+
+    .slideshow-container {
+      position: relative;
+      max-width: 800px;
+      margin: 30px auto;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      aspect-ratio: 16 / 9;
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255, 255, 255, 0.7);
+      color: #333;
+      padding: 10px 16px;
+      cursor: pointer;
+      border-radius: 50%;
+      font-weight: bold;
+      user-select: none;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: #ffdfc7;
+    }
+
+    .prev { left: 10px; }
+    .next { right: 10px; }
+
+    .content {
+      max-width: 950px;
+      margin: 40px auto;
+      padding: 0 20px;
+      font-size: 17px;
+      line-height: 1.7;
+      color: #333;
+    }
+
+    .section-title {
+      font-weight: bold;
+      font-size: 20px;
+      margin-top: 40px;
+      color: #b05436;
+    }
+
+    .lantern-section {
+      background-color: #ffe7d7;
+      padding: 20px;
+      margin: 40px 0;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+
+    .lantern-buttons button {
+      margin: 10px;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      color: white;
+      font-weight: bold;
+    }
+
+    .lantern-buttons button.red { background-color: #e74c3c; }
+    .lantern-buttons button.blue { background-color: #3498db; }
+    .lantern-buttons button.yellow { background-color: #f1c40f; color: black; }
+
+    #lanternMessage {
+      margin-top: 20px;
+      font-size: 18px;
+      font-style: italic;
+      color: #555;
+    }
+
+    /* 🚂 Train animation */
+    #train {
+      position: fixed;
+      bottom: 0;
+      left: -200px;
+      font-size: 40px;
+      animation: moveTrain 15s linear infinite;
+      z-index: 9999;
+      pointer-events: none;
+    }
+
+    @keyframes moveTrain {
+      0% { left: -200px; }
+      100% { left: 110%; }
+    }
+
+    /* ✨ Content fade-in effects */
+    .content p, .content .lantern-section {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .content p:nth-of-type(1) { animation-delay: 0.3s; }
+    .content p:nth-of-type(2) { animation-delay: 0.6s; }
+    .content p:nth-of-type(3) { animation-delay: 0.9s; }
+    .content p:nth-of-type(4) { animation-delay: 1.2s; }
+    .content p:nth-of-type(5) { animation-delay: 1.5s; }
+
+    .lantern-section {
+      animation-delay: 1.8s;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html">Home</a>
+    <a href="agama.html">Agama</a>
+    <a href="bahasaindoneisa.html">Bahasa Indonesia</a>
+    <a href="bahasainggris.html">Bahasa Inggris</a>
+    <a href="ips.html">IPS</a>
+    <a href="mandarin.html">Mandarin</a>
+    <a href="ppkn.html">PPKN</a>
+  </header>
+
+  <h1>🌸 Edutrip to Shifen Old Street 🌸</h1>
+
+  <div class="slideshow-container">
+    <img src="shifen old street 1.webp" class="slide active" alt="Shifen 1" />
+    <img src="shifen old street 2.jpg" class="slide" alt="Shifen 2" />
+    <img src="shifen old street 3.jpg" class="slide" alt="Shifen 3" />
+    <img src="shifen old street 4.webp" class="slide" alt="Shifen 4" />
+
+    <div class="prev" onclick="showSlide(-1)">&#10094;</div>
+    <div class="next" onclick="showSlide(1)">&#10095;</div>
+  </div>
+
+  <div class="content">
+    <p><strong>Introduction</strong><br><br>
+    The sound of a train passing just inches away. Colorful lanterns lighting up the sky. The smell of delicious street food. ✨ Shifen Old Street is a place full of wonders. As part of our edutrip to Taiwan, I had the opportunity to visit this historic railway town filled with traditions and breathtaking views. Walking through its narrow streets felt like stepping into a postcard from the past.</p>
+
+    <p class="section-title">🚂 The History of Shifen Old Street</p>
+    <p>
+      Built during the Japanese colonial era, Shifen's railway was originally used to transport coal. Today, the tracks are still active—and run right through the middle of the town! 🚋 Several times a day, visitors step aside as a train slowly passes by, creating a thrilling yet charming moment.
+      <br><br>
+      Surrounded by wooden buildings and nostalgic shops, every step in Shifen feels like you're living inside history.
+    </p>
+
+    <p class="section-title">🎈 Interactive Sky Lantern Experience</p>
+    <div class="lantern-section">
+      <p>Click a lantern color to see what your wish might mean! 🎊</p>
+      <div class="lantern-buttons">
+        <button class="red" onclick="setLantern('Red')">Red</button>
+        <button class="blue" onclick="setLantern('Blue')">Blue</button>
+        <button class="yellow" onclick="setLantern('Yellow')">Yellow</button>
+      </div>
+      <div id="lanternMessage">Your wish meaning will appear here!</div>
+    </div>
+
+    <p class="section-title">🍢 The Food and Culture</p>
+    <p>
+      The scent of grilled sausages and peanut squid fills the air. 🤤 Shifen Old Street is a paradise for foodies! I tried many local snacks that were new and exciting. The vendors were warm and friendly, sharing stories and making every moment feel special. There were also little craft stores where you could buy handmade lantern souvenirs or postcards to take home a piece of Shifen's charm.
+    </p>
+
+    <p class="section-title">💭 Conclusion</p>
+    <p>
+      My visit to Shifen Old Street was more than a trip—it was a memory I’ll always treasure. From the history of the town to the joy of releasing a lantern, everything felt magical. ✨ I learned that travel isn’t just about seeing new places—it’s about feeling something new too.
+    </p>
+  </div>
+
+  <!-- 🚂 Animated Train -->
+  <div id="train">
+    🚂💨
+  </div>
+
+  <script>
+    // Image Slider
+    let currentIndex = 0;
+    const slides = document.querySelectorAll(".slide");
+
+    function showSlide(direction) {
+      slides[currentIndex].classList.remove("active");
+      currentIndex = (currentIndex + direction + slides.length) % slides.length;
+      slides[currentIndex].classList.add("active");
+    }
+
+    // Lantern Button Interactions
+    function setLantern(color) {
+      const message = document.getElementById("lanternMessage");
+      if (color === "Red") {
+        message.textContent = "❤️ Red means you wish for happiness and love!";
+      } else if (color === "Blue") {
+        message.textContent = "💙 Blue brings wishes of good health and calmness.";
+      } else if (color === "Yellow") {
+        message.textContent = "💛 Yellow is the color of wealth, success, and bright futures!";
+      }
+    }
+  </script>
+
+</body>
+</html>

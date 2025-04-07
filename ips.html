@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bar Navigasi</title>
+  <style>
+    :root {
+      --bg-color: #f5f0fa;
+      --text-color: #333;
+      --header-color: #b4a7d6;
+      --accent-color: #5b488b;
+      --card-bg: #fff;
+    }
+    body.dark-mode {
+      --bg-color: #1e1e2f;
+      --text-color: #eee;
+      --header-color: #4e4e6e;
+      --accent-color: #d6b4f0;
+      --card-bg: #2e2e3e;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: 0.3s;
+      overflow-x: hidden;
+    }
+    header {
+      background-color: var(--header-color);
+      padding: 10px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    header a {
+      color: var(--accent-color);
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 18px;
+    }
+    header a:hover {
+      text-shadow: 0 0 8px var(--accent-color);
+    }
+    h1 {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 36px;
+      color: var(--accent-color);
+    }
+    .typewriter {
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 4px solid;
+      width: 0;
+      animation: typing 4s steps(40, end) forwards;
+      margin: auto;
+    }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    .toggle-btn {
+      position: absolute;
+      top: 12px;
+      right: 20px;
+      padding: 8px 12px;
+      background: var(--accent-color);
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .slideshow-container {
+      text-align: center;
+      margin-top: 30px;
+    }
+    #slideshow {
+      width: 500px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .content-box {
+      background-color: var(--card-bg);
+      width: 85%;
+      margin: 30px auto;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+      transform-style: preserve-3d;
+    }
+    .content-box:hover {
+      transform: perspective(1000px) rotateY(2deg);
+    }
+    .fact-box {
+      margin: 20px auto;
+      text-align: center;
+    }
+    .fact-box button {
+      background-color: var(--accent-color);
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .fact-box p {
+      display: none;
+      margin-top: 15px;
+      font-style: italic;
+    }
+    .quiz-box {
+      background-color: var(--card-bg);
+      padding: 20px;
+      width: 300px;
+      margin: 30px auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      text-align: center;
+    }
+    .quiz-box input[type="radio"] {
+      margin: 10px;
+    }
+    .emoji-burst::after {
+      content: '✨🎉🥳';
+      font-size: 20px;
+      animation: floatEmoji 2s infinite;
+    }
+    @keyframes floatEmoji {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+    .confetti {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 9999;
+      overflow: hidden;
+    }
+    .confetti span {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: red;
+      animation: fall 3s infinite;
+    }
+    @keyframes fall {
+      to { transform: translateY(100vh) rotate(360deg); }
+    }
+    body.dark-mode::before {
+      content: '✨';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(white 1px, transparent 1px);
+      background-size: 20px 20px;
+      opacity: 0.05;
+      pointer-events: none;
+      z-index: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="confetti" id="confetti"></div>
+  <button class="toggle-btn" onclick="toggleMode()">🌓 Mode</button>
+
+  <header>
+    <a href="index.html">Home</a>
+    <a href="agama.html">Agama</a>
+    <a href="bahasaindoneisa.html">Bahasa Indonesia</a>
+    <a href="bahasainggris.html">Bahasa Inggris</a>
+    <a href="ips.html">IPS</a>
+    <a href="mandarin.html">Mandarin</a>
+    <a href="ppkn.html">PPKN</a>
+  </header>
+
+  <h1 class="typewriter">✨ Selamat datang di Halaman IPS! ✨</h1>
+
+  <div class="slideshow-container">
+    <img id="slideshow" src="taiwan2.jpg" alt="Keelung Night Market">
+  </div>
+
+  <div class="content-box">
+    <strong>Destinasi: Keelung Night Market 🇹🇼✨</strong><br><br>
+    Waktu aku dan rombongan edutrip berkunjung ke Keelung Night Market, aku melihat tempat ini sangat ramai dan penuh warna! Banyak lampu terang, bau makanan enak di mana-mana, dan suara orang tertawa serta ngobrol. Di sana, aku berkesempatan mewawancarai seorang penjual makanan bernama Mr. Chen, dibantu oleh pemandu kami untuk menerjemahkannya ke Bahasa Inggris.<br><br>
+    <strong>Wawancara dengan Mr. Chen:</strong><br>
+    Aku bertanya pada Mr. Chen tentang tradisi yang masih ada di pasar malam ini. Dia bilang bahwa tradisi jualan malam hari di pasar ini sudah ada sejak lama, bahkan sejak kakeknya masih muda. Mereka masih menjaga kebiasaan menjual makanan khas Taiwan seperti oyster omelette, stinky tofu, dan mochi, yang resepnya diwariskan dari generasi ke generasi. Ia juga bilang bahwa saat perayaan seperti Tahun Baru Imlek, para pedagang menghias kios mereka dengan lentera dan memberikan makanan gratis untuk orang yang membutuhkan, sebagai bentuk berbagi rezeki.<br><br>
+    <strong>Hasil Observasi:</strong><br>
+    <ul>
+      <li><strong>Kondisi Sebagian Besar Bangunan:</strong> Sebagian besar bangunan di sekitar pasar malam adalah toko-toko lama, tapi masih berdiri kuat. Walaupun tidak baru, semuanya tetap terlihat bersih dan terawat.</li>
+      <li><strong>Cara Masyarakat Merawat Masa Lalu:</strong> Banyak kios yang masih menggunakan papan nama kuno dengan tulisan tradisional Mandarin. Mereka juga tetap menjual makanan khas dari zaman dulu, bukan makanan modern saja. Ini membuat suasana pasar seperti waktu dulu masih terasa.</li>
+      <li><strong>Tata Kota Area Destinasi:</strong> Pasar malam ini sangat tertata. Meskipun ramai, ada jalur khusus untuk pejalan kaki dan petugas kebersihan yang rutin bekerja. Ada juga petunjuk arah dan papan informasi untuk wisatawan.</li>
+      <li><strong>Interaksi Antar-Generasi:</strong> Aku melihat ada anak-anak muda yang membantu orang tua mereka di kios. Mereka tertawa, ngobrol, dan bekerja sama. Ini menunjukkan bahwa mereka menjaga hubungan baik antar-generasi sambil meneruskan usaha keluarga.</li>
+      <li><strong>Kepercayaan / Keyakinan Masyarakat:</strong> Di beberapa sudut pasar, aku melihat orang-orang membakar dupa kecil atau memberi persembahan kecil kepada dewa keberuntungan. Ini menunjukkan bahwa sebagian masyarakat masih memegang kepercayaan tradisional Taiwan, walaupun ada juga yang tidak terlalu aktif dalam kegiatan agama.</li>
+    </ul>
+    Kunjungan ke Keelung Night Market sangat seru dan membuka mataku tentang bagaimana budaya dan tradisi bisa tetap hidup di tengah kota yang modern. Aku belajar banyak dari tempat ini, bukan cuma soal makanan, tapi juga soal kehidupan masyarakat Taiwan. 🌙🍢
+  </div>
+
+  <div class="fact-box">
+    <button onclick="document.getElementById('fact').style.display='block'">Klik untuk Fun Fact!</button>
+    <p id="fact">Keelung Night Market adalah salah satu pasar malam tertua di Taiwan!</p>
+  </div>
+
+  <div class="quiz-box">
+    <h3>Mini Quiz 🧠</h3>
+    <p>Apa makanan khas Taiwan di pasar malam?</p>
+    <label><input type="radio" name="q1" value="a"> Hamburger</label><br>
+    <label><input type="radio" name="q1" value="b"> Stinky tofu</label><br>
+    <label><input type="radio" name="q1" value="c"> Pizza</label><br><br>
+    <button onclick="checkAnswer()">Cek Jawaban</button>
+  </div>
+
+  <script>
+    const images = ["taiwan2.jpg", "keelung.webp", "keelung2.avif"];
+    let currentIndex = 0;
+    const imgElement = document.getElementById("slideshow");
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % images.length;
+      imgElement.src = images[currentIndex];
+    }, 2000);
+
+    function toggleMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+
+    function checkAnswer() {
+      const correct = document.querySelector('input[name="q1"][value="b"]').checked;
+      if (correct) {
+        triggerConfetti();
+        alert("🎉 Selamat! Jawaban kamu benar! 🎉");
+      } else {
+        alert("Oops! Coba lagi ya!");
+      }
+    }
+
+    function triggerConfetti() {
+      const confettiContainer = document.getElementById("confetti");
+      confettiContainer.innerHTML = "";
+      for (let i = 0; i < 100; i++) {
+        const span = document.createElement("span");
+        span.style.left = Math.random() * 100 + "vw";
+        span.style.top = Math.random() * -20 + "px";
+        span.style.backgroundColor = `hsl(${Math.random()*360}, 100%, 70%)`;
+        span.style.animationDuration = 2 + Math.random() * 3 + "s";
+        confettiContainer.appendChild(span);
+      }
+      setTimeout(() => confettiContainer.innerHTML = "", 3000);
+    }
+  </script>
+</body>
+</html>

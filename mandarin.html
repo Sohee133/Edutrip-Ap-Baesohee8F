@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Halaman Mandarin</title>
+  <style>
+    :root {
+      --bg-color: #fff0f5;
+      --text-color: #333;
+      --accent-color: #cc6699;
+      --hover-color: #aa5588;
+      --header-color: #ffddee;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: 0.3s ease;
+      overflow-x: hidden;
+    }
+
+    header {
+      background-color: var(--header-color);
+      padding: 15px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    header a {
+      color: var(--accent-color);
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 18px;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    header a:hover {
+      color: var(--hover-color);
+      transform: scale(1.1);
+      text-shadow: 0 0 10px var(--accent-color);
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 40px;
+      color: #fff;
+      text-shadow: 0 0 10px #ff66cc, 0 0 20px #ff66cc;
+      animation: pulseGlow 1.5s infinite;
+    }
+
+    @keyframes pulseGlow {
+      0% { text-shadow: 0 0 8px #ff99cc; }
+      50% { text-shadow: 0 0 24px #ff66cc; }
+      100% { text-shadow: 0 0 8px #ff99cc; }
+    }
+
+    #toggleTitle {
+      display: block;
+      margin: 10px auto 30px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s;
+    }
+
+    #toggleTitle:hover {
+      background-color: var(--hover-color);
+      transform: scale(1.05);
+    }
+
+    .fun-banner {
+      background: linear-gradient(90deg, #ff99cc, #ffe6f0);
+      text-align: center;
+      padding: 10px;
+      font-size: 18px;
+      animation: bannerSlide 10s linear infinite;
+      font-weight: bold;
+    }
+
+    @keyframes bannerSlide {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    p {
+      line-height: 1.7;
+      font-size: 18px;
+    }
+
+    .gallery {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 25px;
+      flex-wrap: wrap;
+    }
+
+    .gallery img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .quiz {
+      margin-top: 40px;
+      background-color: #fff0f9;
+      padding: 20px;
+      border-radius: 15px;
+    }
+
+    .quiz h3 {
+      margin-bottom: 10px;
+    }
+
+    .quiz button {
+      padding: 8px 15px;
+      margin-top: 10px;
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .quiz-result {
+      margin-top: 10px;
+      font-weight: bold;
+      color: var(--hover-color);
+    }
+
+    .sparkle, .mouse-trail {
+      pointer-events: none;
+      position: absolute;
+      font-size: 20px;
+      animation: floatUp 1.5s ease-out forwards;
+    }
+
+    @keyframes floatUp {
+      from { opacity: 1; transform: translateY(0); }
+      to { opacity: 0; transform: translateY(-50px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="fun-banner">🌟 Fun Fact: Eason suka makan ayam goreng dan ingin ke Bali & Jakarta! 🌟</div>
+  <header>
+    <a href="index.html">Home</a>
+    <a href="agama.html">Agama</a>
+    <a href="bahasaindoneisa.html">Bahasa Indonesia</a>
+    <a href="bahasainggris.html">Bahasa Inggris</a>
+    <a href="ips.html">IPS</a>
+    <a href="mandarin.html">Mandarin</a>
+    <a href="ppkn.html">PPKN</a>
+  </header>
+
+  <h1 id="main-title">✨ Ini adalah Halaman Mandarin ✨</h1>
+  <button id="toggleTitle">Terjemahkan ke 中文</button>
+
+  <div class="container">
+    <p>
+      我朋友的名字是eason, 他是 Fu Jen sacred heart senior high school的学生.他今年八年级。他今年十四岁了，他的生日是十二月二十三日。 他什么都喜欢吃，但他最喜欢的是炸鸡. 他的爱好是打篮球，他通常和他的朋友一起打球.
+      他曾去过马来西亚、新加坡、日本、韩国、中国。他认为一切都很好。 他说如果有机会，他想去印尼玩。他觉得印尼很有趣，也有很多好吃的东西。
+      当他访问印度尼西亚时，他想去巴厘岛或雅加达，因为他对印度尼西亚的文化感到惊讶。
+      有一天，我们去了九份老街. 那里有很多小吃摊，我们一起吃了台湾有名的食物。 Eason 看到很多食物，很开心。他说他喜欢所有的摊位。
+      我很享受与朋友和伙伴们一起去九份，尽管我们最后不得不分开，但仍然很有趣。
+    </p>
+
+    <div class="gallery">
+      <img src="buddies.jpg" alt="Buddies 1" title="Sahabat Hebat!" onclick="alert('📸 Ini foto murid-murid taiwan dan Santa Luarensia')">
+      <img src="buddies2.jpg" alt="Buddies 2" title="Momen Seru!" onclick="alert('📸 Momen yang sangat berharga')">
+    </div>
+
+    <div class="quiz">
+      <h3>🎓 Kuis Seru!</h3>
+      <p>Di mana Eason ingin berkunjung jika dia punya kesempatan?</p>
+      <button onclick="checkAnswer('A')">A. Malaysia</button>
+      <button onclick="checkAnswer('B')">B. Jepang</button>
+      <button onclick="checkAnswer('C')">C. Indonesia</button>
+      <div id="quizResult" class="quiz-result"></div>
+    </div>
+  </div>
+
+  <script>
+    const title = document.getElementById('main-title');
+    const button = document.getElementById('toggleTitle');
+    let translated = false;
+
+    button.addEventListener('click', () => {
+      if (!translated) {
+        title.textContent = '✨ 這是中文頁面 ✨';
+        button.textContent = 'Translate to Bahasa Indonesia';
+      } else {
+        title.textContent = '✨ Ini adalah Halaman Mandarin ✨';
+        button.textContent = 'Terjemahkan ke 中文';
+      }
+      translated = !translated;
+    });
+
+    function checkAnswer(option) {
+      const result = document.getElementById('quizResult');
+      if (option === 'C') {
+        result.textContent = 'Benar! Eason ingin pergi ke Indonesia! 🎉';
+        for (let i = 0; i < 20; i++) createShootingStar();
+        for (let i = 0; i < 15; i++) setTimeout(() => createConfetti(), i * 100);
+      } else {
+        result.textContent = 'Ups, coba lagi! 😅';
+      }
+    }
+
+    function createShootingStar() {
+      const star = document.createElement('div');
+      star.textContent = '🌠';
+      star.className = 'sparkle';
+      star.style.left = Math.random() * window.innerWidth + 'px';
+      star.style.top = Math.random() * window.innerHeight + 'px';
+      document.body.appendChild(star);
+      setTimeout(() => document.body.removeChild(star), 1500);
+    }
+
+    function createConfetti() {
+      const emoji = ['🎉','✨','🎊','🌟'][Math.floor(Math.random() * 4)];
+      const el = document.createElement('div');
+      el.textContent = emoji;
+      el.className = 'mouse-trail';
+      el.style.left = Math.random() * window.innerWidth + 'px';
+      el.style.top = Math.random() * window.innerHeight + 'px';
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), 1600);
+    }
+  </script>
+</body>
+</html>
